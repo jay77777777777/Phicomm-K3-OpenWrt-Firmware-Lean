@@ -31,9 +31,8 @@
 # cat feeds.conf.default |grep bypass
 # echo '=========Add bypass source OK!========='
 
-echo '添加kenzok8软件源'
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+echo '添加haiibo软件源'
+sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 echo '=========Add bypass source OK!========='
 
 # echo '添加HelloWorld软件源'
@@ -53,13 +52,7 @@ echo '=========Add bypass source OK!========='
 # git clone https://github.com/kiddin9/luci-app-dnsfilter package/lean/luci-app-dnsfilter 
 # echo '=========Add dnsfilter source OK!========='
 
-echo '添加AdguardHome'
-rm -rf feeds/kenzo/adguardhome
-rm -rf feeds/kenzo/luci-app-adguardhome
-rm -rf package/feeds/kenzo/luci-app-adguardhome
-rm -rf package/lean/luci-app-adguardhome
-git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
-echo '=========Add AdguardHome OK!========='
+
 
 # echo '添加my-dnshelper'
 # rm -rf package/lean/luci-app-my-dnshelper
