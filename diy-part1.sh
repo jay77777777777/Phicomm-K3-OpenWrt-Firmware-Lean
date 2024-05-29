@@ -31,9 +31,9 @@
 # cat feeds.conf.default |grep bypass
 # echo '=========Add bypass source OK!========='
 
-echo '添加haiibo软件源'
-sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
-echo '=========Add bypass source OK!========='
+# echo '添加haiibo软件源'
+# sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
+# echo '=========Add bypass source OK!========='
 
 # echo '添加HelloWorld软件源'
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
@@ -84,9 +84,9 @@ echo '=========Add bypass source OK!========='
 # git clone https://github.com/thinktip/luci-theme-neobird.git package/lean/luci-theme-neobird
 # echo '=========Add neobird-theme OK!========='
 
-#echo '添加kiddin9软件源'
-#echo 'src-git openwrt_kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
-#echo '=========Add kiddin9 source OK!========='
+echo '添加kiddin9软件源'
+echo 'src-git openwrt_kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
+echo '=========Add kiddin9 source OK!========='
 
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl
