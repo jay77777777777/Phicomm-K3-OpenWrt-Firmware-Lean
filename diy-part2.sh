@@ -9,8 +9,10 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-echo 'Modify default IP'
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+##配置ip等
+sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3| ; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
+sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/luci2/bin/config_generate
 
 echo '修改主机名'
 sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
