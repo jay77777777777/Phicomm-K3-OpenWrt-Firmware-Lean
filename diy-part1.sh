@@ -13,15 +13,19 @@
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-echo '添加SSR-Plus软件源'
-sed -i "/helloworld/d" "feeds.conf.default"
-echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
-echo '=========Add SSR-Plus source OK!========='
+rm -rf ./package/lean/k3screenctrl
+               
+sed -i "1isrc-git 2305ipk https://github.com/xiangfeidexiaohuo/2305-ipk\n" feeds.conf.default
 
-echo '添加passwall软件源'
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-echo '=========Add passwall source OK!========='
+# echo '添加SSR-Plus软件源'
+# sed -i "/helloworld/d" "feeds.conf.default"
+# echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
+# echo '=========Add SSR-Plus source OK!========='
+
+# echo '添加passwall软件源'
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo '=========Add passwall source OK!========='
 
 # echo '添加AdguardHome'
 # rm -rf feeds/kenzo/adguardhome
@@ -42,18 +46,18 @@ rm -rf package/lean/k3screenctrl
 git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenctrl/
 echo '=========Replace k3screen drive plug OK!========='
 
-echo '添加OpenClash'
-rm -rf package/lean/luci-app-openclash
-mkdir package/luci-app-openclash
-cd package/luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull --depth 1 origin master
-git branch --set-upstream-to=origin/master master
+# echo '添加OpenClash'
+# rm -rf package/lean/luci-app-openclash
+# mkdir package/luci-app-openclash
+# cd package/luci-app-openclash
+# git init
+# git remote add -f origin https://github.com/vernesong/OpenClash.git
+# git config core.sparsecheckout true
+# echo "luci-app-openclash" >> .git/info/sparse-checkout
+# git pull --depth 1 origin master
+# git branch --set-upstream-to=origin/master master
 # git clone https://github.com/vernesong/OpenClash package/lean/luci-app-openclash
-echo '=========Add OpenClash source OK!========='
+# echo '=========Add OpenClash source OK!========='
 
 # echo '添加Haiibo软件源'
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
